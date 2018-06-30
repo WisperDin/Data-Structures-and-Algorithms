@@ -56,11 +56,5 @@ func (trie Trie) Remove(item string) bool {
 		return false
 	}
 	currentNode.last = false
-	symbolIndex := len(item) - 1
-	for len(currentNode.children) == 0 {
-		delete(currentNode.children, int32(item[symbolIndex]))
-		currentNode = currentNode.parent
-		symbolIndex--
-	}
 	return true
 }
